@@ -14,7 +14,11 @@ const forecast = (latitude, longitude, location, callback) => {
         `currently in ${location}, it is ${
           body.currently.temperature
         } degrees celsius outside and there is ${body.currently
-          .precipProbability * 100}% chance of ${body.currently.precipType}.`
+          .precipProbability * 100}% chance of ${
+          body.currently.precipType
+        }. Today the high temp will be ${
+          body.daily.data[0].temperatureHigh
+        } with a low temperature of ${body.daily.data[0].temperatureLow}.`
       );
     }
   });
